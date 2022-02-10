@@ -1,0 +1,53 @@
+Date,SCP,Location,Object Classification,biological,humanoid,location,predatory,memetic,mechanical,mobile,replicating,virtual,Team Sent,Acquisition Successful?,Profit/Loss (normalized to 1920 $MM)
+1923Q1,SCP-104,Site 6: Geneva,Euclid,1,0,1,1,1,0,0,0,1,Legal,1,10.3
+1923Q1,SCP-132,Site 4: Moscow,Keter,1,0,0,0,0,0,1,0,0,None,0,0
+1923Q1,SCP-223,Site 6: Geneva,Euclid,1,0,0,0,0,0,0,0,1,None,0,0
+1923Q1,SCP-227,Site 8: Tehran,Euclid,0,0,0,0,0,0,0,1,0,None,0,0
+1923Q1,SCP-243,Site 2: Washington D.C,Euclid,1,0,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-270,Site 6: Geneva,Keter,1,0,0,0,0,0,1,0,0,None,0,0
+1923Q1,SCP-287,Site 7: Shanghai,Safe,1,0,0,0,0,0,1,0,1,None,0,0
+1923Q1,SCP-311,Site 7: Shanghai,Euclid,0,0,0,0,0,0,0,1,0,None,0,0
+1923Q1,SCP-341,Site 2: Washington D.C,Keter,1,0,0,1,0,0,0,0,0,None,0,0
+1923Q1,SCP-342,Site 4: Moscow,Euclid,0,1,0,0,1,0,0,0,1,None,0,0
+1923Q1,SCP-382,Site 2: Washington D.C,Keter,0,1,0,0,0,0,1,0,0,None,0,0
+1923Q1,SCP-387,Site 3: Kinshasa,Keter,0,0,0,1,0,0,0,1,0,None,0,0
+1923Q1,SCP-389,Site 2: Washington D.C,Euclid,1,0,1,1,0,0,0,0,0,None,0,0
+1923Q1,SCP-399,Site 4: Moscow,Safe,1,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-426,Site 7: Shanghai,Keter,0,0,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-442,Site 8: Tehran,Keter,1,0,1,0,1,1,0,0,0,Infiltration,0,0
+1923Q1,SCP-456,Site 8: Tehran,Keter,0,0,0,1,0,0,1,1,0,None,0,0
+1923Q1,SCP-464,Site 6: Geneva,Keter,0,0,1,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-467,Site 3: Kinshasa,Euclid,1,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-472,Site 6: Geneva,Safe,1,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-478,Site 7: Shanghai,Safe,0,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-479,Site 4: Moscow,Keter,0,0,1,0,1,0,1,0,1,None,0,0
+1923Q1,SCP-480,Site 6: Geneva,Euclid,0,1,0,0,1,0,1,0,0,None,0,0
+1923Q1,SCP-483,Site 7: Shanghai,Safe,0,0,0,0,0,0,1,1,0,None,0,0
+1923Q1,SCP-487,Site 3: Kinshasa,Safe,0,0,0,0,0,0,1,0,0,Infiltration,1,9.8
+1923Q1,SCP-488,Site 8: Tehran,Safe,0,0,1,0,0,0,1,0,1,None,0,0
+1923Q1,SCP-491,Site 3: Kinshasa,Keter,0,0,0,1,0,0,1,0,0,None,0,0
+1923Q1,SCP-496,Site 4: Moscow,Safe,1,0,0,0,0,0,1,0,0,Paramilitary,1,19.7
+1923Q1,SCP-499,Site 3: Kinshasa,Keter,0,0,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-505,Site 6: Geneva,Safe,0,1,0,1,0,0,1,0,0,None,0,0
+1923Q1,SCP-506,Site 3: Kinshasa,Keter,0,0,0,0,0,0,0,1,0,None,0,0
+1923Q1,SCP-507,Site 3: Kinshasa,Safe,1,0,0,0,1,0,1,0,0,None,0,0
+1923Q1,SCP-512,Site 6: Geneva,Euclid,0,0,1,0,0,0,1,0,1,None,0,0
+1923Q1,SCP-515,Site 6: Geneva,Keter,0,0,1,0,1,0,0,0,0,None,0,0
+1923Q1,SCP-516,Site 4: Moscow,Keter,0,0,1,0,0,0,0,0,0,Legal,1,-10.3
+1923Q1,SCP-517,Site 8: Tehran,Safe,0,0,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-518,Site 8: Tehran,Safe,0,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-521,Site 2: Washington D.C,Euclid,1,0,0,0,0,0,0,0,1,Infiltration,0,0
+1923Q1,SCP-523,Site 8: Tehran,Euclid,0,1,0,1,0,0,1,0,0,None,0,0
+1923Q1,SCP-524,Site 2: Washington D.C,Keter,0,1,0,0,1,0,0,1,0,None,0,0
+1923Q1,SCP-525,Site 2: Washington D.C,Safe,1,0,0,0,0,0,1,0,1,None,0,0
+1923Q1,SCP-527,Site 4: Moscow,Euclid,0,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-531,Site 4: Moscow,Keter,0,0,0,0,0,0,1,0,0,None,0,0
+1923Q1,SCP-532,Site 3: Kinshasa,Keter,0,0,0,0,1,0,0,0,0,None,0,0
+1923Q1,SCP-534,Site 8: Tehran,Keter,1,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-535,Site 7: Shanghai,Euclid,1,1,0,0,0,0,0,0,0,None,0,0
+1923Q1,SCP-536,Site 6: Geneva,Keter,1,0,0,0,0,0,1,0,0,Legal,0,0
+1923Q1,SCP-537,Site 2: Washington D.C,Euclid,1,0,0,0,0,1,0,0,0,None,0,0
+1923Q1,SCP-541,Site 2: Washington D.C,Keter,0,0,0,0,0,0,1,1,0,None,0,0
+1923Q1,SCP-542,Site 4: Moscow,Euclid,0,0,0,0,0,0,1,0,0,Paramilitary,0,0
+1923Q1,SCP-544,Site 8: Tehran,Safe,1,1,0,0,0,0,1,0,0,None,0,0
+1923Q1,SCP-545,Site 2: Washington D.C,Euclid,1,0,0,0,0,1,0,0,1,None,0,0
