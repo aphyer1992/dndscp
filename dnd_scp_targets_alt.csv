@@ -1,60 +1,61 @@
 SCP,Foundation Site,Object Classification,is_humanoid,is_infohazardous,is_location,is_organic,is_predatory,is_mechanical,is_mobile,is_replicating,is_virtual
-SCP-537,Site 6: Geneva,Safe,0,0,0,0,0,1,1,0,0
-SCP-1315,Site 2: Washington D.C,Keter,0,0,1,0,0,0,1,0,0
-SCP-1413,Site 4: Moscow,Euclid,0,0,0,1,0,0,1,0,0
-SCP-1616,Site 8: Tehran,Safe,0,0,0,0,0,0,0,0,0
-SCP-1691,Site 6: Geneva,Keter,0,0,0,0,1,0,0,0,0
-SCP-1734,Site 2: Washington D.C,Keter,0,0,1,0,1,0,0,0,0
-SCP-1881,Site 8: Tehran,Safe,1,1,0,0,0,1,1,0,0
-SCP-1898,Site 2: Washington D.C,Keter,0,0,0,0,0,0,0,1,0
-SCP-1958,Site 8: Tehran,Keter,0,0,0,1,0,0,1,0,0
-SCP-1994,Site 4: Moscow,Keter,1,0,0,1,0,0,0,0,0
-SCP-2209,Site 7: Shanghai,Keter,0,0,0,0,1,1,0,0,0
-SCP-2221,Site 2: Washington D.C,Safe,0,0,0,0,0,0,0,0,1
-SCP-2236,Site 2: Washington D.C,Keter,0,1,0,0,0,0,1,0,0
-SCP-2311,Site 8: Tehran,Safe,0,0,0,1,1,0,0,0,0
-SCP-2347,Site 7: Shanghai,Safe,0,0,0,0,0,1,1,0,0
-SCP-2442,Site 3: Kinshasa,Euclid,1,0,0,0,0,1,1,0,0
-SCP-2445,Site 6: Geneva,Keter,1,0,0,1,0,0,1,0,0
-SCP-2535,Site 8: Tehran,Safe,0,1,0,0,0,1,0,0,0
-SCP-2568,Site 8: Tehran,Safe,0,0,0,0,0,0,1,0,0
-SCP-2582,Site 3: Kinshasa,Euclid,0,1,0,0,0,0,0,0,0
-SCP-2712,Site 7: Shanghai,Keter,0,0,0,0,1,0,1,1,0
-SCP-2854,Site 7: Shanghai,Safe,0,1,0,0,0,0,0,0,0
-SCP-2939,Site 2: Washington D.C,Keter,0,1,0,0,1,0,0,1,0
-SCP-2975,Site 8: Tehran,Safe,0,0,0,1,0,0,0,0,1
-SCP-3080,Site 4: Moscow,Keter,0,0,0,0,0,1,0,0,0
-SCP-3133,Site 7: Shanghai,Euclid,0,1,1,0,0,0,0,0,0
-SCP-3155,Site 7: Shanghai,Euclid,0,0,1,0,0,0,0,0,0
-SCP-3245,Site 2: Washington D.C,Safe,0,0,1,0,0,0,0,0,0
-SCP-3279,Site 6: Geneva,Euclid,0,0,0,0,0,1,1,1,0
-SCP-3352,Site 6: Geneva,Safe,0,0,0,0,0,0,0,0,1
-SCP-3534,Site 2: Washington D.C,Euclid,0,0,0,0,0,1,0,0,1
-SCP-3593,Site 2: Washington D.C,Euclid,0,0,0,0,0,0,1,0,0
-SCP-3617,Site 6: Geneva,Euclid,0,1,0,1,0,0,1,0,0
-SCP-3745,Site 8: Tehran,Euclid,1,0,0,0,0,0,0,0,0
-SCP-3792,Site 3: Kinshasa,Safe,0,0,0,0,0,0,1,0,1
-SCP-3934,Site 3: Kinshasa,Safe,0,0,1,0,1,0,0,0,0
-SCP-3959,Site 2: Washington D.C,Safe,0,0,0,0,0,0,0,0,0
-SCP-3988,Site 4: Moscow,Keter,0,0,1,1,1,0,1,1,0
-SCP-4009,Site 7: Shanghai,Euclid,0,0,0,0,0,1,0,0,1
-SCP-4205,Site 7: Shanghai,Keter,0,1,0,0,1,1,0,0,0
-SCP-4312,Site 8: Tehran,Keter,0,1,0,0,0,0,0,0,1
-SCP-4342,Site 4: Moscow,Safe,0,0,0,0,0,0,0,0,0
-SCP-4347,Site 8: Tehran,Safe,0,0,0,0,1,0,0,1,0
-SCP-4489,Site 6: Geneva,Keter,0,0,0,0,1,0,0,0,0
-SCP-4698,Site 2: Washington D.C,Safe,0,0,0,0,0,1,0,0,0
-SCP-4742,Site 4: Moscow,Euclid,0,0,0,0,1,1,0,0,1
-SCP-4904,Site 8: Tehran,Safe,0,0,1,0,0,0,1,0,1
-SCP-4931,Site 7: Shanghai,Keter,0,0,0,0,0,0,0,0,0
-SCP-4976,Site 3: Kinshasa,Keter,0,0,0,0,1,1,0,0,0
-SCP-5007,Site 7: Shanghai,Euclid,0,1,0,0,0,0,0,0,0
-SCP-5060,Site 4: Moscow,Keter,0,0,0,0,1,0,0,1,0
-SCP-5072,Site 7: Shanghai,Safe,0,0,1,0,0,0,0,0,0
-SCP-5096,Site 4: Moscow,Keter,0,0,0,0,0,0,0,1,0
-SCP-5152,Site 7: Shanghai,Safe,0,0,0,0,0,1,1,0,1
-SCP-5154,Site 3: Kinshasa,Safe,0,1,0,0,0,0,1,0,1
-SCP-5215,Site 8: Tehran,Keter,0,0,0,0,0,0,1,1,0
-SCP-5227,Site 8: Tehran,Safe,0,0,1,1,0,0,0,0,0
-SCP-5257,Site 7: Shanghai,Safe,0,1,0,0,0,1,0,0,1
-SCP-5281,Site 3: Kinshasa,Keter,0,0,0,0,0,1,0,0,0
+SCP-537,Site 2: Washington D.C,Safe,0,0,0,0,0,1,1,0,0
+SCP-1282,Site 4: Moscow,Euclid,0,1,0,0,0,1,0,0,1
+SCP-1466,Site 3: Kinshasa,Euclid,1,0,0,1,0,1,0,0,0
+SCP-1720,Site 3: Kinshasa,Safe,0,0,0,0,0,0,0,0,0
+SCP-1785,Site 7: Shanghai,Euclid,0,1,1,0,0,0,0,0,0
+SCP-1838,Site 3: Kinshasa,Keter,0,0,1,0,1,0,0,0,0
+SCP-1970,Site 2: Washington D.C,Euclid,0,0,0,1,0,0,0,0,0
+SCP-2116,Site 7: Shanghai,Keter,0,0,0,0,1,1,0,0,0
+SCP-2122,Site 4: Moscow,Safe,0,0,1,0,0,0,0,0,1
+SCP-2178,Site 7: Shanghai,Keter,0,0,0,0,0,0,0,1,0
+SCP-2253,Site 3: Kinshasa,Safe,1,0,0,0,1,0,1,0,0
+SCP-2325,Site 6: Geneva,Euclid,0,0,1,0,0,0,1,0,0
+SCP-2603,Site 6: Geneva,Keter,0,0,0,0,0,0,0,0,0
+SCP-2626,Site 4: Moscow,Keter,0,0,0,0,1,0,1,0,0
+SCP-2628,Site 6: Geneva,Keter,1,0,0,0,0,0,1,0,0
+SCP-2699,Site 6: Geneva,Euclid,0,0,0,0,1,0,0,1,0
+SCP-2719,Site 6: Geneva,Euclid,0,0,0,1,0,0,0,0,0
+SCP-2720,Site 7: Shanghai,Keter,1,0,0,1,0,0,0,0,0
+SCP-2797,Site 7: Shanghai,Keter,1,1,0,1,0,0,1,0,0
+SCP-2883,Site 7: Shanghai,Euclid,0,1,0,0,0,0,0,0,0
+SCP-2898,Site 3: Kinshasa,Keter,1,0,0,0,0,1,1,1,0
+SCP-2942,Site 2: Washington D.C,Euclid,0,0,0,0,0,0,0,1,1
+SCP-2964,Site 7: Shanghai,Keter,1,0,0,0,0,1,0,0,0
+SCP-3212,Site 4: Moscow,Safe,0,0,0,1,0,0,1,0,0
+SCP-3273,Site 8: Tehran,Safe,0,0,0,0,0,1,1,0,1
+SCP-3279,Site 7: Shanghai,Keter,0,0,0,0,1,1,0,1,0
+SCP-3339,Site 3: Kinshasa,Safe,0,0,0,1,0,0,0,0,0
+SCP-3440,Site 8: Tehran,Safe,0,0,0,0,0,1,0,0,0
+SCP-3577,Site 3: Kinshasa,Keter,0,0,1,0,0,1,1,1,0
+SCP-3597,Site 4: Moscow,Safe,0,0,0,0,0,0,0,0,0
+SCP-3656,Site 8: Tehran,Keter,1,0,0,0,0,0,1,0,0
+SCP-3668,Site 6: Geneva,Keter,1,1,0,0,0,0,1,0,0
+SCP-3699,Site 6: Geneva,Safe,0,0,1,1,0,0,0,0,0
+SCP-3781,Site 2: Washington D.C,Keter,0,0,0,0,0,0,1,0,0
+SCP-3850,Site 4: Moscow,Safe,0,0,1,1,0,0,0,0,0
+SCP-3936,Site 4: Moscow,Euclid,1,1,0,1,0,0,0,0,0
+SCP-4004,Site 7: Shanghai,Keter,0,1,1,1,0,0,1,0,0
+SCP-4026,Site 4: Moscow,Euclid,1,0,0,0,0,0,1,0,0
+SCP-4027,Site 6: Geneva,Euclid,0,0,0,0,0,1,1,0,0
+SCP-4036,Site 7: Shanghai,Keter,0,0,0,0,1,0,0,0,0
+SCP-4222,Site 2: Washington D.C,Keter,0,0,0,0,0,0,0,0,1
+SCP-4271,Site 4: Moscow,Safe,0,0,0,0,0,0,0,0,0
+SCP-4370,Site 2: Washington D.C,Safe,0,1,1,0,0,0,0,0,1
+SCP-4390,Site 2: Washington D.C,Safe,0,0,0,0,0,0,0,0,1
+SCP-4412,Site 8: Tehran,Keter,0,0,0,0,0,1,1,0,0
+SCP-4424,Site 2: Washington D.C,Keter,1,0,0,0,0,1,1,0,0
+SCP-4449,Site 3: Kinshasa,Safe,0,0,0,0,0,1,0,0,1
+SCP-4550,Site 4: Moscow,Euclid,0,1,1,0,0,0,0,0,0
+SCP-4565,Site 4: Moscow,Keter,1,0,0,0,0,1,0,0,1
+SCP-4579,Site 2: Washington D.C,Keter,0,0,0,0,0,0,1,0,1
+SCP-4625,Site 8: Tehran,Safe,0,0,1,0,1,0,0,0,0
+SCP-4654,Site 4: Moscow,Keter,0,0,1,0,0,0,0,1,0
+SCP-4709,Site 7: Shanghai,Safe,0,0,0,0,0,0,0,0,0
+SCP-4834,Site 7: Shanghai,Euclid,1,0,0,1,0,0,1,0,0
+SCP-4931,Site 6: Geneva,Euclid,0,1,0,0,1,0,1,0,0
+SCP-4957,Site 4: Moscow,Safe,0,0,0,0,0,0,1,0,0
+SCP-5058,Site 4: Moscow,Keter,0,0,0,0,0,0,0,0,0
+SCP-5087,Site 6: Geneva,Euclid,0,0,1,1,0,0,0,0,0
+SCP-5117,Site 7: Shanghai,Euclid,0,1,0,1,0,0,1,0,0
+SCP-5136,Site 8: Tehran,Safe,0,1,1,1,0,0,0,0,0
