@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>D&D.Sci April 2021 Evaluator</title>
+</head>
+<body>
+  <div>Shark Repellent [40gp] <span id="sr"><button onclick="buy_sr()">Buy</button></span></div>
+  <br>
+  <div>Armed Carpenters [20gp] <span id="ac"><button onclick="buy_ac()">Buy</button></span></div>
+  <br>
+  <div>Merpeople Tribute [45gp] <span id="mt"><button onclick="buy_mt()">Buy</button></span></div>
+  <br>
+  <div>Extra Oars [1gp/oar] <span id="eo_count">(0/20)</span> <span id="eo"><button onclick="buy_one_eo()">Buy</button> <button onclick="buy_all_eo()">Buy All</button></span></div>
+  <br>
+  <div>Extra Cannons [10gp/cannon] <span id="ec_count">(0/3)</span> <span id="ec"><button onclick="buy_one_ec()">Buy</button> <button onclick="buy_all_ec()">Buy All</button></span></div>
+  <br>
+  <div>Crow's Nest Rifles [35gp] <span id="cnr"><button onclick="buy_cnr()">Buy</button></span></div>
+  <br>
+  <div>Foam Swords [15gp] <span id="fs"><button onclick="buy_fs()">Buy</button></span></div>
+  <br>
+  <br>
+  <div id="Gold">Gold remaining: 100</div>
+  <br>
+  <br>
+  <div id="sail"><button onclick="sail()">Set sail!</button></div>
+  <br>
+  <br>
+  <div id="result"></div>
+  <br>
+  <div id="epilogue"></div>
+  <br>
+  <div id="winchance"></div>
+<b style="font-size:28px">
+</div>
+  
+</b>
+<script id="jsbin-javascript">
+
+sr = 0
+ac = 0
+mt = 0
+eo = 0
+ec = 0
+cnr = 0
+fs = 0
+
+gold = 100
+
+function buy_sr(){
+ if (gold>=40){
+  gold=gold-40
+  sr+=1
+  document.getElementById("sr").innerHTML = "Bought!"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+ }
+}
+
+function buy_ac(){
+ if (gold>=20){
+  gold=gold-20
+  ac+=1
+  document.getElementById("ac").innerHTML = "Bought!"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+ }
+}
+
+function buy_mt(){
+ if (gold>=45){
+  gold=gold-45
+  mt+=1
+  document.getElementById("mt").innerHTML = "Bought!"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+ }
+}
+
+function buy_one_eo(){
+ if (gold>=1){
+  gold=gold-1
+  eo+=1
+  document.getElementById("eo_count").innerHTML = "("+eo+"/20)"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+  if (eo>=20){
+   document.getElementById("eo").innerHTML = ""
+  }
+ }
+}
+
+function buy_all_eo(){
+ if (gold>=(20-eo)){
+  gold = gold - (20-eo)
+  eo=20
+  document.getElementById("eo_count").innerHTML = "("+eo+"/20)"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+  document.getElementById("eo").innerHTML = ""
+ }
+}
+
+function buy_one_ec(){
+ if (gold>=10){
+  gold=gold-10
+  ec+=1
+  document.getElementById("ec_count").innerHTML = "("+ec+"/3)"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+  if (ec>=3){
+   document.getElementById("ec").innerHTML = ""
+  }
+ }
+}
+
+function buy_all_ec(){
+ if (gold>=((3-ec)*10)){
+  gold = gold - (3-ec)*10
+  ec=3
+  document.getElementById("ec_count").innerHTML = "("+ec+"/3)"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+  document.getElementById("ec").innerHTML = ""
+ }
+}
+
+function buy_cnr(){
+ if (gold>=35){
+  gold=gold-35
+  cnr+=1
+  document.getElementById("cnr").innerHTML = "Bought!"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+ }
+}
+
+function buy_fs(){
+ if (gold>=15){
+  gold=gold-15
+  fs+=1
+  document.getElementById("fs").innerHTML = "Bought!"
+  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+ }
+}
+
+function get_mer_death(){
+ return 0.36787109375001675
+}
+
+function get_nes_death(){
+ if (ec==0){
+  return 0.022001199424266815
+ }
+ if (ec==1){
+  return 0.00004075095
+ }
+ return 0
+}
+
+function get_crab_death(){
+ if (ac==0){
+  return 0.2842565166951134
+ }
+ if (ac==1){
+  return 0.08080176728363929
+ }
+}
+
+function get_whale_death(){
+ wha = [0.7785770558101165, 0.711456327289185, 0.6620497194235485, 0.6097350752762424, 0.5553895831062422, 0.47223926833267477, 0.41724349473941946, 0.3379502808767708, 0.265164291727239, 0.2214229444902037, 0.164096921607726, 0.10392540935410623, 0.07051234581016555, 0.0394363811472445, 0.024249231872999297, 0.011806248645622392, 0.004247195514606739, 0.0016857187614553492, 0.0004590027094673334, 0.00010435629352987235, 1.930971252553821e-05]
+ return wha[eo]
+}
+
+function calc_prob_you_die_in_one_trip(){
+ numer = 3*get_whale_death()+2*get_nes_death()+3*get_crab_death()
+ if(mt==0){
+  numer+=4*get_mer_death()
+ }
+ denom = 42-sr*7-mt*7
+ return numer/denom
+}
+
+function calc_prob_you_survive_ten_trips(){
+ return Math.pow(1-calc_prob_you_die_in_one_trip(), 10)
+}
+
+function select_epilogue(){
+ if (gold>=50){
+  return "While doing so, you get overwhelming support from the Navy's accountants, who respect your prioritization of money over the lives of crewmembers."
+ }
+ if ((gold>=15) && (fs>0)){
+  return "The Navy's accountants and the Dockworkers' Union both support you in your future endeavours."
+ }
+ if (gold>=15){
+  return "While doing so, you get an unexpected level of support from the Navy's accountants, who respect your financial prudence."
+ }
+ if (fs>0){
+  return "While doing so, you get an unexpected level of support from the Dockworkers' Union, who see your attempts to limit damage from Water Elementals as a clear sign of favor."
+ }
+ return ""
+}
+
+function sail(){
+ winChance = calc_prob_you_survive_ten_trips()
+ WinChanceToDisplay = (Math.floor(winChance*10000)/100)+"%"
+ document.getElementById("winchance").innerHTML = "(you had a "+WinChanceToDisplay+" chance of survival.)"
+ if (Math.random()<winChance){
+  document.getElementById("result").innerHTML = "You return home safely, and High Command orders you to design and administrate a larger test of your ideas."
+  document.getElementById("epilogue").innerHTML = select_epilogue()
+ }
+ else{
+  document.getElementById("result").innerHTML = "Despite your best efforts, you die in a shipwreck."
+  document.getElementById("epilogue").innerHTML = ""
+ }
+}
+  
+
+
+</script>
+</body>
+</html>
