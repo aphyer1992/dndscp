@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>D&D.SCP Evaluator</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div id="do_thing"><button onclick="do_thing()">Do a Thing</button></div>
 </body>
+<script id="jsbin-javascript">
+
+//Probablistic!
+
+function roll_dX(X){
+ return Math.ceil(Math.random()*X)
+}
+
+function do_thing(){
+  document.getElementById("result_text").innerHTML = "A thing has been done!"
+}
+</script>
 </html>
