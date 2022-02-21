@@ -4,212 +4,560 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>D&D.Sci April 2021 Evaluator</title>
+  <title>D&D.Sci III Evaluator</title>
 </head>
 <body>
-  <div>Shark Repellent [40gp] <span id="sr"><button onclick="buy_sr()">Buy</button></span></div>
+  <div id="line1"> Pyromancer A will be attacking Vitamancer territory from Pyromancer territory. We should send <span id="mancer1"><button onclick="set_mancer1('Vitamancer A')">Vitamancer A</button>/<button onclick="set_mancer1('Vitamancer B')">Vitamancer B</button>/<button onclick="set_mancer1('Geomancer A')">Geomancer A</button>/<button onclick="set_mancer1('Geomancer B')">Geomancer B</button>/<button onclick="set_mancer1('The Cryomancer')">The Cryomancer</button></span> to <span id="tactic1"><button onclick="set_tactic1('defend')">defend</button>/<button onclick="set_tactic1('counterattack')">counterattack</button></span>.</div>
   <br>
-  <div>Armed Carpenters [20gp] <span id="ac"><button onclick="buy_ac()">Buy</button></span></div>
+  <div id="line2"> Pyromancer B will be attacking Vitamancer territory from Pyromancer territory. We should send <span id="mancer2"><button onclick="set_mancer2('Vitamancer A')">Vitamancer A</button>/<button onclick="set_mancer2('Vitamancer B')">Vitamancer B</button>/<button onclick="set_mancer2('Geomancer A')">Geomancer A</button>/<button onclick="set_mancer2('Geomancer B')">Geomancer B</button>/<button onclick="set_mancer2('The Cryomancer')">The Cryomancer</button></span> to <span id="tactic2"><button onclick="set_tactic2('defend')">defend</button>/<button onclick="set_tactic2('counterattack')">counterattack</button></span>.</div>
   <br>
-  <div>Merpeople Tribute [45gp] <span id="mt"><button onclick="buy_mt()">Buy</button></span></div>
+  <div id="line3"> Necromancer A will be attacking Cryomancer territory from Necromancer territory. We should send <span id="mancer3"><button onclick="set_mancer3('Vitamancer A')">Vitamancer A</button>/<button onclick="set_mancer3('Vitamancer B')">Vitamancer B</button>/<button onclick="set_mancer3('Geomancer A')">Geomancer A</button>/<button onclick="set_mancer3('Geomancer B')">Geomancer B</button>/<button onclick="set_mancer3('The Cryomancer')">The Cryomancer</button></span> to <span id="tactic3"><button onclick="set_tactic3('defend')">defend</button>/<button onclick="set_tactic3('counterattack')">counterattack</button></span>.</div>
   <br>
-  <div>Extra Oars [1gp/oar] <span id="eo_count">(0/20)</span> <span id="eo"><button onclick="buy_one_eo()">Buy</button> <button onclick="buy_all_eo()">Buy All</button></span></div>
+  <div id="line4"> Necromancer B will be attacking Vitamancer territory from Pyromancer territory. We should send <span id="mancer4"><button onclick="set_mancer4('Vitamancer A')">Vitamancer A</button>/<button onclick="set_mancer4('Vitamancer B')">Vitamancer B</button>/<button onclick="set_mancer4('Geomancer A')">Geomancer A</button>/<button onclick="set_mancer4('Geomancer B')">Geomancer B</button>/<button onclick="set_mancer4('The Cryomancer')">The Cryomancer</button></span> to <span id="tactic4"><button onclick="set_tactic4('defend')">defend</button>/<button onclick="set_tactic4('counterattack')">counterattack</button></span>.</div>
   <br>
-  <div>Extra Cannons [10gp/cannon] <span id="ec_count">(0/3)</span> <span id="ec"><button onclick="buy_one_ec()">Buy</button> <button onclick="buy_all_ec()">Buy All</button></span></div>
-  <br>
-  <div>Crow's Nest Rifles [35gp] <span id="cnr"><button onclick="buy_cnr()">Buy</button></span></div>
-  <br>
-  <div>Foam Swords [15gp] <span id="fs"><button onclick="buy_fs()">Buy</button></span></div>
+  <div id="line5"> Necromancer C will be attacking Vitamancer territory from Necromancer territory. We should send <span id="mancer5"><button onclick="set_mancer5('Vitamancer A')">Vitamancer A</button>/<button onclick="set_mancer5('Vitamancer B')">Vitamancer B</button>/<button onclick="set_mancer5('Geomancer A')">Geomancer A</button>/<button onclick="set_mancer5('Geomancer B')">Geomancer B</button>/<button onclick="set_mancer5('The Cryomancer')">The Cryomancer</button></span> to <span id="tactic5"><button onclick="set_tactic5('defend')">defend</button>/<button onclick="set_tactic5('counterattack')">counterattack</button></span>.</div>
   <br>
   <br>
-  <div id="Gold">Gold remaining: 100</div>
   <br>
+  <div id="buttonLine"><button onclick="confirm()">Confirm allocations</button></div>
   <br>
-  <div id="sail"><button onclick="sail()">Set sail!</button></div>
+  <div id="rxnLine"></div>
   <br>
+  <div id="responseLine"></div>
+  <div id="responseLine2"></div>
+  <div id="responseLine3"></div>
+  <div id="responseLine4"></div>
   <br>
-  <div id="result"></div>
+  <div id="banishmentLine"></div>
   <br>
-  <div id="epilogue"></div>
-  <br>
-  <div id="winchance"></div>
 <b style="font-size:28px">
 </div>
   
 </b>
 <script id="jsbin-javascript">
 
-sr = 0
-ac = 0
-mt = 0
-eo = 0
-ec = 0
-cnr = 0
-fs = 0
+mancer1=""
+mancer2=""
+mancer3=""
+mancer4=""
+mancer5=""
 
-gold = 100
+tactic1=""
+tactic2=""
+tactic3=""
+tactic4=""
+tactic5=""
 
-function buy_sr(){
- if (gold>=40){
-  gold=gold-40
-  sr+=1
-  document.getElementById("sr").innerHTML = "Bought!"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+function set_mancer1(mage){
+ if (mancer1!=mage && mancer2!=mage && mancer3!=mage && mancer4!=mage &&mancer5!=mage){ 
+  mancer1=mage
+  document.getElementById("mancer1").innerHTML = mage
+ }
+}
+function set_mancer2(mage){
+ if (mancer1!=mage && mancer2!=mage && mancer3!=mage && mancer4!=mage &&mancer5!=mage){ 
+  mancer2=mage
+  document.getElementById("mancer2").innerHTML = mage
+ }
+}
+function set_mancer3(mage){
+ if (mancer1!=mage && mancer2!=mage && mancer3!=mage && mancer4!=mage &&mancer5!=mage){ 
+  mancer3=mage
+  document.getElementById("mancer3").innerHTML = mage
+ }
+}
+function set_mancer4(mage){
+ if (mancer1!=mage && mancer2!=mage && mancer3!=mage && mancer4!=mage &&mancer5!=mage){ 
+  mancer4=mage
+  document.getElementById("mancer4").innerHTML = mage
+ }
+}
+function set_mancer5(mage){
+ if (mancer1!=mage && mancer2!=mage && mancer3!=mage && mancer4!=mage &&mancer5!=mage){ 
+  mancer5=mage
+  document.getElementById("mancer5").innerHTML = mage
  }
 }
 
-function buy_ac(){
- if (gold>=20){
-  gold=gold-20
-  ac+=1
-  document.getElementById("ac").innerHTML = "Bought!"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+function set_tactic1(tac){
+  tactic1=tac
+  document.getElementById("tactic1").innerHTML = tac
+}
+function set_tactic2(tac){
+  tactic2=tac
+  document.getElementById("tactic2").innerHTML = tac
+}
+function set_tactic3(tac){
+  tactic3=tac
+  document.getElementById("tactic3").innerHTML = tac
+}
+function set_tactic4(tac){
+  tactic4=tac
+  document.getElementById("tactic4").innerHTML = tac
+}
+function set_tactic5(tac){
+  tactic5=tac
+  document.getElementById("tactic5").innerHTML = tac
+}
+
+function percentForFight1(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  return "(chance of victory was 17.6%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  return "(chance of victory was 33.72%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  return "(chance of victory was 59.95%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  return "(chance of victory was 9.97%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  return "(chance of victory was 17.6%)"
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  return "(chance of victory was 90.03%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  return "(chance of victory was 96.7%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  return "(chance of victory was 53.35%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  return "(chance of victory was 7.15%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  return "(chance of victory was 97.9%)"
  }
 }
 
-function buy_mt(){
- if (gold>=45){
-  gold=gold-45
-  mt+=1
-  document.getElementById("mt").innerHTML = "Bought!"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+function percentForFight2(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  return "(chance of victory was 13.45%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  return "(chance of victory was 27.8%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  return "(chance of victory was 53.35%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  return "(chance of victory was 7.15%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  return "(chance of victory was 13.45%)"
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  return "(chance of victory was 66.28%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  return "(chance of victory was 82.4%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  return "(chance of victory was 22.4%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  return "(chance of victory was 0.7%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  return "(chance of victory was 86.55%)"
  }
 }
 
-function buy_one_eo(){
- if (gold>=1){
-  gold=gold-1
-  eo+=1
-  document.getElementById("eo_count").innerHTML = "("+eo+"/20)"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
-  if (eo>=20){
-   document.getElementById("eo").innerHTML = ""
-  }
+function percentForFight3(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  return "(chance of victory was 33.72%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  return "(chance of victory was 53.35%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  return "(chance of victory was 92.85%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  return "(chance of victory was 46.65%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  return "(chance of victory was 0%)"
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  return "(chance of victory was 9.97%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  return "(chance of victory was 22.4%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  return "(chance of victory was 3.3%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  return "(chance of victory was 0%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  return "(chance of victory was 0%)"
  }
 }
 
-function buy_all_eo(){
- if (gold>=(20-eo)){
-  gold = gold - (20-eo)
-  eo=20
-  document.getElementById("eo_count").innerHTML = "("+eo+"/20)"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
-  document.getElementById("eo").innerHTML = ""
+function percentForFight4(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  return "(chance of victory was 77.6%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  return "(chance of victory was 90.03%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  return "(chance of victory was 97.9%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  return "(chance of victory was 66.28%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  return "(chance of victory was 77.6%)"
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  return "(chance of victory was 72.2%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  return "(chance of victory was 86.55%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  return "(chance of victory was 27.8%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  return "(chance of victory was 1.26%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  return "(chance of victory was 90.03%)"
  }
 }
 
-function buy_one_ec(){
- if (gold>=10){
-  gold=gold-10
-  ec+=1
-  document.getElementById("ec_count").innerHTML = "("+ec+"/3)"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
-  if (ec>=3){
-   document.getElementById("ec").innerHTML = ""
-  }
+function percentForFight5(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  return "(chance of victory was 99.3%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  return "(chance of victory was 95.05%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  return "(chance of victory was 100%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  return "(chance of victory was 98.74%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  return "(chance of victory was 96.7%)"
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  return "(chance of victory was 92.85%)"
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  return "(chance of victory was 77.6%)"
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  return "(chance of victory was 40.05%)"
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  return "(chance of victory was 0.35%)"
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  return "(chance of victory was 82.4%)"
  }
 }
 
-function buy_all_ec(){
- if (gold>=((3-ec)*10)){
-  gold = gold - (3-ec)*10
-  ec=3
-  document.getElementById("ec_count").innerHTML = "("+ec+"/3)"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
-  document.getElementById("ec").innerHTML = ""
+function winFight1(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  if (Math.random()<0.176){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  if (Math.random()<0.3372){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  if (Math.random()<0.5595){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  if (Math.random()<0.0997){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  if (Math.random()<0.176){return true}
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  if (Math.random()<0.9003){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  if (Math.random()<0.967){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  if (Math.random()<0.5335){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  if (Math.random()<0.0715){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  if (Math.random()<0.979){return true}
+ }
+ return false
+}
+
+
+function winFight2(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  if (Math.random()<0.1345){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  if (Math.random()<0.278){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  if (Math.random()<0.5335){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  if (Math.random()<0.0715){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  if (Math.random()<0.1345){return true}
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  if (Math.random()<0.6628){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  if (Math.random()<0.824){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  if (Math.random()<0.224){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  if (Math.random()<0.007){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  if (Math.random()<0.8655){return true}
+ }
+ return false
+}
+
+
+function winFight3(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  if (Math.random()<0.3372){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  if (Math.random()<0.5335){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  if (Math.random()<0.9285){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  if (Math.random()<0.4665){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  if (false){return true}
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  if (Math.random()<0.0997){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  if (Math.random()<0.224){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  if (Math.random()<0.033){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  if (Math.random()<0){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  if (false){return true}
  }
 }
 
-function buy_cnr(){
- if (gold>=35){
-  gold=gold-35
-  cnr+=1
-  document.getElementById("cnr").innerHTML = "Bought!"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+
+function winFight4(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  if (Math.random()<0.776){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  if (Math.random()<0.9003){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  if (Math.random()<0.979){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  if (Math.random()<0.6628){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  if (Math.random()<0.776){return true}
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  if (Math.random()<0.722){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  if (Math.random()<0.8655){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  if (Math.random()<0.278){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  if (Math.random()<0.0126){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  if (Math.random()<0.9003){return true}
  }
 }
 
-function buy_fs(){
- if (gold>=15){
-  gold=gold-15
-  fs+=1
-  document.getElementById("fs").innerHTML = "Bought!"
-  document.getElementById("Gold").innerHTML = "Gold Remaining: " + gold
+
+function winFight5(mancer, tactic){
+ if (mancer=="Vitamancer A" && tactic=="defend"){
+  if (Math.random()<0.993){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="defend"){
+  if (Math.random()<0.9505){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="defend"){
+  if (Math.random()<1){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="defend"){
+  if (Math.random()<0.9874){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="defend"){
+  if (Math.random()<0.967){return true}
+ }
+ 
+ if (mancer=="Vitamancer A" && tactic=="counterattack"){
+  if (Math.random()<0.9285){return true}
+ }
+ if (mancer=="Vitamancer B" && tactic=="counterattack"){
+  if (Math.random()<0.776){return true}
+ }
+ if (mancer=="Geomancer A" && tactic=="counterattack"){
+  if (Math.random()<0.4005){return true}
+ }
+ if (mancer=="Geomancer B" && tactic=="counterattack"){
+  if (Math.random()<0.0035){return true}
+ }
+ if (mancer=="The Cryomancer" && tactic=="counterattack"){
+  if (Math.random()<0.824){return true}
  }
 }
 
-function get_mer_death(){
- return 0.36787109375001675
+wins=0
+summonerWins=false
+
+function feel_worried(){
+ document.getElementById("opinion").innerHTML = "somewhat worrying"
 }
 
-function get_nes_death(){
- if (ec==0){
-  return 0.022001199424266815
- }
- if (ec==1){
-  return 0.00004075095
- }
- return 0
+function feel_chill(){
+ document.getElementById("opinion").innerHTML = "not your problem"
 }
 
-function get_crab_death(){
- if (ac==0){
-  return 0.2842565166951134
- }
- if (ac==1){
-  return 0.08080176728363929
- }
+function feel_sneaky(){
+ document.getElementById("opinion").innerHTML = "exactly as you planned"
 }
 
-function get_whale_death(){
- wha = [0.7785770558101165, 0.711456327289185, 0.6620497194235485, 0.6097350752762424, 0.5553895831062422, 0.47223926833267477, 0.41724349473941946, 0.3379502808767708, 0.265164291727239, 0.2214229444902037, 0.164096921607726, 0.10392540935410623, 0.07051234581016555, 0.0394363811472445, 0.024249231872999297, 0.011806248645622392, 0.004247195514606739, 0.0016857187614553492, 0.0004590027094673334, 0.00010435629352987235, 1.930971252553821e-05]
- return wha[eo]
+function get_cut_off(){
+ document.getElementById("responseLine").innerHTML = ""
+ document.getElementById("responseLine2").innerHTML = "Before you get halfway through your explanation, the summoner abruptly banishes you."
+ document.getElementById("responseLine3").innerHTML = ""
+ document.getElementById("responseLine4").innerHTML = ""
 }
 
-function calc_prob_you_die_in_one_trip(){
- numer = 3*get_whale_death()+2*get_nes_death()+3*get_crab_death()
- if(mt==0){
-  numer+=4*get_mer_death()
- }
- denom = 42-sr*7-mt*7
- return numer/denom
-}
-
-function calc_prob_you_survive_ten_trips(){
- return Math.pow(1-calc_prob_you_die_in_one_trip(), 10)
-}
-
-function select_epilogue(){
- if (gold>=50){
-  return "While doing so, you get overwhelming support from the Navy's accountants, who respect your prioritization of money over the lives of crewmembers."
- }
- if ((gold>=15) && (fs>0)){
-  return "The Navy's accountants and the Dockworkers' Union both support you in your future endeavours."
- }
- if (gold>=15){
-  return "While doing so, you get an unexpected level of support from the Navy's accountants, who respect your financial prudence."
- }
- if (fs>0){
-  return "While doing so, you get an unexpected level of support from the Dockworkers' Union, who see your attempts to limit damage from Water Elementals as a clear sign of favor."
- }
- return ""
-}
-
-function sail(){
- winChance = calc_prob_you_survive_ten_trips()
- WinChanceToDisplay = (Math.floor(winChance*10000)/100)+"%"
- document.getElementById("winchance").innerHTML = "(you had a "+WinChanceToDisplay+" chance of survival.)"
- if (Math.random()<winChance){
-  document.getElementById("result").innerHTML = "You return home safely, and High Command orders you to design and administrate a larger test of your ideas."
-  document.getElementById("epilogue").innerHTML = select_epilogue()
- }
- else{
-  document.getElementById("result").innerHTML = "Despite your best efforts, you die in a shipwreck."
-  document.getElementById("epilogue").innerHTML = ""
- }
-}
+function confirm(){
+ 
+ if (mancer1!="" && mancer2!="" && mancer3!="" && mancer4!="" && mancer5!="" && tactic1!="" && tactic2!="" && tactic3!="" && tactic4!="" && tactic5!=""){
+  document.getElementById("buttonLine").innerHTML = ""
   
-
+  if (winFight1(mancer1, tactic1)){
+   wins+=1
+   document.getElementById("line1").innerHTML = (mancer1 + " wins against Pyromancer A! "+ percentForFight1(mancer1, tactic1))
+   if (mancer1=="Geomancer B"){summonerWins=true}
+  }
+  else{
+   document.getElementById("line1").innerHTML = (mancer1 + " fails to defeat Pyromancer A. " + percentForFight1(mancer1, tactic1))
+  }
+  
+  if (winFight2(mancer2, tactic2)){
+   wins+=1
+   document.getElementById("line2").innerHTML = (mancer2 + " wins against Pyromancer B! "+ percentForFight2(mancer2, tactic2))
+   if (mancer2=="Geomancer B"){
+    summonerWins=true
+   }
+  }
+  else{
+   document.getElementById("line2").innerHTML = (mancer2 + " fails to defeat Pyromancer B. " + percentForFight2(mancer2, tactic2))
+  }
+  
+  if (winFight3(mancer3, tactic3)){
+   wins+=1
+   document.getElementById("line3").innerHTML = (mancer3 + " wins against Necromancer A! "+ percentForFight3(mancer3, tactic3))
+   if (mancer3=="Geomancer B"){
+    summonerWins=true
+   }
+  }
+  else{
+   document.getElementById("line3").innerHTML = (mancer3 + " fails to defeat Necromancer A. " + percentForFight3(mancer3, tactic3))
+  }
+  
+  if (winFight4(mancer4, tactic4)){
+   wins+=1
+   document.getElementById("line4").innerHTML = (mancer4 + " wins against Necromancer B! "+ percentForFight4(mancer4, tactic4))
+   if (mancer4=="Geomancer B"){
+    summonerWins=true
+   }
+  }
+  else{
+   document.getElementById("line4").innerHTML = (mancer4 + " fails to defeat Necromancer B. " + percentForFight4(mancer4, tactic4))
+  }
+  
+  if (winFight5(mancer5, tactic5)){
+   wins+=1
+   document.getElementById("line5").innerHTML = (mancer5 + " wins against Necromancer C! "+ percentForFight5(mancer5, tactic5))
+   if (mancer5=="Geomancer B"){summonerWins=true}
+  }
+  else{
+   document.getElementById("line5").innerHTML = (mancer5 + " fails to defeat Necromancer C. " + percentForFight5(mancer5, tactic5))
+  }
+  
+  if (wins==5){
+   document.getElementById("rxnLine").innerHTML = '"'+"A full slate of victories! I congratulate you, demon; I'll be sure to make use of you and your bretheren in the future."+'"'
+   document.getElementById("responseLine").innerHTML = "Your competence and luck may have inculated a bad habit. As he banishes you, you reflect that this is <span id='opinion'><button onclick='feel_worried()'>somewhat worrying</button>/<button onclick='feel_chill()'>not your problem</button>/<button onclick='feel_sneaky()'>exactly as you planned</button></span>."
+  }
+  else if (wins==4 && summonerWins){
+   document.getElementById("rxnLine").innerHTML = '"'+"Nicely done! I congratulate you, demon; I'll be sure to make use of you and your bretheren in the future."+'"'
+   document.getElementById("responseLine").innerHTML = "Your competence may have inculated a bad habit. As he banishes you, you reflect that this is <span id='opinion'><button onclick='feel_worried()'>somewhat worrying</button>/<button onclick='feel_chill()'>not your problem</button>/<button onclick='feel_sneaky()'>exactly as you planned</button></span>."
+  }
+  else if (wins==3){
+   document.getElementById("rxnLine").innerHTML = '"'+"Not bad, demon. You can tell your superior I think you performed acceptably."+'"'
+   document.getElementById("responseLine").innerHTML = "How charitable."
+  }
+  else if (wins==2 || (wins==1 && !summonerWins)){
+   document.getElementById("rxnLine").innerHTML = '"'+"A fiasco, all things considered. Still, I'm . . . sure you tried your best."+'"'
+   document.getElementById("responseLine").innerHTML = "Even you don't have the heart to break it to him."
+  }
+  else if (wins==0){
+   document.getElementById("rxnLine").innerHTML = '"'+"Traitor! Saboteur! You are hereby banished!"+'"'
+   document.getElementById("responseLine").innerHTML = "Not quite the slow and deliberate threats that voice was so clearly made to deliver; but an improvement, to be sure."
+  }
+  else if (wins==4 && !summonerWins){
+   document.getElementById("rxnLine").innerHTML = '"'+"Work to rule, eh? Sacrificing my victory to make sure my allies won? I'm not even sure how you knew . . . but I suppose that's fair. I'll make sure to summon you at a more reasonable hour next time."+'"'
+  }
+  else if (wins==1 && summonerWins){
+   document.getElementById("rxnLine").innerHTML = "When he returns, the summoner throws aside all caution, steps from the shadows, and unbinds your tongue."+'"'+"Ensuring everyone lost but your conjuror . . . hurting them all, but sparing me . . . why? What was the point!? Speak, damned thing!"+'"'
+   document.getElementById("responseLine").innerHTML = "<button onclick='get_cut_off()'>Say:</button> 'I did it because I like you and wanted them to see how great you were.'"
+   document.getElementById("responseLine2").innerHTML = "<button onclick='get_cut_off()'>Say:</button> 'I did it because I wanted to hurt you, and this seemed like the best way.'"
+   document.getElementById("responseLine3").innerHTML = "<button onclick='get_cut_off()'>Say:</button> 'Oh good, you're finally letting me talk. Listen: you need to add time as a column in your dataset, you really ought to put more effort into keeping Pyromancers on the defensive, and is there a reason why you never try three-way fights?'"
+   document.getElementById("responseLine4").innerHTML = "<button onclick='get_cut_off()'>Say:</button> 'Actually, I chose randomly. Unrelatedly, can I please have your soul?'"
+  }
+  
+  
+ }
+}
 
 </script>
 </body>
